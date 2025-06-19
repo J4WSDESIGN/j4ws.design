@@ -165,7 +165,9 @@ body{
 .sc__videos video {           
     width: 32%;       
     border-radius: 5px;  
-    height: 100vh; 
+    height: 100vh;
+    pointer-events: none;
+    user-select: none; 
 }
 
 .sc__images-row {

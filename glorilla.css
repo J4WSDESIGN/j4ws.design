@@ -158,6 +158,11 @@ body{
     justify-content: center;
 }
 
+.glo__titlecards video{
+  pointer-events: none; /* Impide clics */
+  outline: none; /* Quita foco */
+}
+
 .t__video1 {
     margin-top: 200px;
     display: flex;

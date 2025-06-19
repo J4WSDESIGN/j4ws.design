@@ -199,24 +199,30 @@
     const horizontalSection = document.querySelector('.horizontal-scroll');
     const stickyWrapper = horizontalSection.querySelector('.sticky-wrapper');
     const scrollContent = horizontalSection.querySelector('.scroll-content');
-
-    const numSlides = scrollContent.children.length;
-    const slideWidth = window.innerWidth * 0.4;
-    const scrollLength = slideWidth * numSlides - window.innerWidth;
-
-    horizontalSection.style.height = `${scrollLength + window.innerHeight}px`;
-
-    window.addEventListener('scroll', () => {
-    const sectionTop = horizontalSection.offsetTop;
-    const sectionBottom = sectionTop + horizontalSection.offsetHeight;
-    const scrollY = window.scrollY;
-
-  if (scrollY >= sectionTop && scrollY <= sectionBottom - window.innerHeight) {
-    const offset = scrollY - sectionTop;
-    scrollContent.style.transform = `translateX(-${offset}px)`;
-  }
-});
-</script>
+  
+    function enableDesktopScroll() {
+      const numSlides = scrollContent.children.length;
+      const slideWidth = window.innerWidth * 0.4;
+      const scrollLength = slideWidth * numSlides - window.innerWidth;
+  
+      horizontalSection.style.height = `${scrollLength + window.innerHeight}px`;
+  
+      window.addEventListener('scroll', () => {
+        const sectionTop = horizontalSection.offsetTop;
+        const sectionBottom = sectionTop + horizontalSection.offsetHeight;
+        const scrollY = window.scrollY;
+  
+        if (scrollY >= sectionTop && scrollY <= sectionBottom - window.innerHeight) {
+          const offset = scrollY - sectionTop;
+          scrollContent.style.transform = `translateX(-${offset}px)`;
+        }
+      });
+    }
+  
+    if (window.innerWidth >= 768) {
+      enableDesktopScroll();
+    }
+  </script>
 
 
 <script>
