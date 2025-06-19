@@ -252,11 +252,7 @@ body{
 }
 
 .foto1 {
-    background-image: url('images/_DSC0068.jpg');
     border: 1px solid black;
-    background-size: cover; 
-    background-position: center;
-    background-repeat: no-repeat;
     width: 750px;
     height: 550px;
     padding-right: 100px;
